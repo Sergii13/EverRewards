@@ -1,0 +1,38 @@
+.audits {
+   @include adaptiveValue("padding-top", 98, 52);
+   @include adaptiveValue("padding-bottom", 80, 45);
+   img {
+      max-width: 100%;
+   }
+   // .audits__container
+   &__container {
+   }
+   // .audits__title
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: rem(20);
+      }
+   }
+   // .audits__grid-layout
+   &__grid-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(18) rem(31);
+      align-items: flex-start;
+      @media (max-width: $tablet) {
+         gap: rem(11) rem(19);
+      }
+      @media (max-width: $mobileSmall) {
+         gap: rem(5) rem(8);
+      }
+   }
+   // .audits__image-ibg
+   &__image-ibg {
+      padding-bottom: percent(406, 554);
+
+      &.big {
+         grid-column: 1/3;
+         padding-bottom: percent(657, 1129);
+      }
+   }
+}

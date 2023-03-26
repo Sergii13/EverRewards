@@ -1,0 +1,265 @@
+.top {
+   @include adaptiveValue("padding-bottom", 186, 63);
+   @include adaptiveValue("padding-top", 245, 209);
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background: url("@img/top/bg.svg") 0 0 / cover no-repeat fixed, #1d1d1d;
+   color: #fff;
+   position: relative;
+   overflow: hidden;
+   &__decor {
+      position: absolute;
+      transition: transform 0.5s linear;
+      pointer-events: none;
+      &_1 {
+         top: 100px;
+         left: 12%;
+      }
+      &_2 {
+         top: 30%;
+         left: 5%;
+      }
+      &_3 {
+         bottom: 100px;
+         left: 10px;
+      }
+      &_4 {
+         top: 70%;
+         left: 78%;
+      }
+      &_5 {
+         top: 18%;
+         left: 48%;
+      }
+      &_6 {
+         top: 60%;
+         right: 40px;
+      }
+      &_7 {
+         top: 0;
+         right: 0;
+      }
+      @media (max-width: $mobileSmall) {
+         display: none;
+      }
+   }
+   @media (max-width: em(1450)) {
+      padding-top: rem(200);
+   }
+   @media (max-width: $mobile) {
+      padding-top: rem(141);
+   }
+   @media (max-width: $mobileSmall) {
+      padding-top: rem(90);
+   }
+   // .top__container
+   &__container {
+   }
+   // .top__row
+   &__row {
+      display: flex;
+      align-items: flex-start;
+      gap: rem(83);
+      @media (max-width: em(1450)) {
+         gap: rem(40);
+      }
+      @media (max-width: $mobile) {
+         display: block;
+      }
+   }
+   // .top__content
+   &__content {
+      flex: 0 0 percent(723, 1120);
+      position: relative;
+      z-index: 4;
+      @media (max-width: em(1200)) {
+         flex: 0 0 percent(383, 723);
+      }
+   }
+   &__title-text {
+      position: relative;
+      display: inline-block;
+      z-index: 2;
+   }
+   &__title-wrap {
+      position: relative;
+      &::after {
+         content: "";
+         height: rem(9);
+         bottom: rem(7);
+         width: 100%;
+         position: absolute;
+         left: 0;
+         background-color: $yellowColor;
+         @media (max-width: $tablet) {
+            bottom: 3px;
+         }
+         @media (max-width: $mobile) {
+            height: rem(7);
+         }
+      }
+   }
+   // .top__title
+   &__title {
+      font-weight: 700;
+      @include adaptiveValue("font-size", 64, 26);
+      line-height: math.div(79, 64);
+      @media (max-width: $tablet) {
+         font-size: rem(46);
+      }
+      @media (max-width: $mobile) {
+         text-align: center;
+         @include adaptiveValue("font-size", 46, 26);
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(40);
+         @media (max-width: $tablet) {
+            margin-bottom: rem(22);
+         }
+         @media (max-width: $mobile) {
+            margin-bottom: rem(60);
+         }
+      }
+   }
+   // .top__inner
+   &__inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(45) rem(40);
+      @media (max-width: $tablet) {
+         gap: rem(30) rem(60);
+      }
+      @media (max-width: $mobile) {
+         gap: rem(18) rem(30);
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(53);
+         @media (max-width: $tablet) {
+            margin-bottom: rem(40);
+         }
+         @media (max-width: $mobile) {
+            margin-bottom: rem(24);
+         }
+      }
+   }
+   // .top__block
+   &__block {
+      &:last-child {
+         flex: 0 0 100%;
+         .top__text {
+            overflow-wrap: break-word;
+            line-height: 173.02%;
+            max-width: calc(100vw - 30px);
+         }
+      }
+   }
+   // .top__label
+   &__label {
+      line-height: 97%;
+      color: $yellowColor;
+      @media (max-width: $tablet) {
+         font-size: rem(14);
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(4);
+      }
+   }
+   // .top__text
+   &__text {
+      font-size: rem(20);
+      line-height: 97%;
+      @media (max-width: $tablet) {
+         font-size: rem(16);
+      }
+      b {
+         font-weight: 700;
+         font-size: 25px;
+         line-height: 120%;
+         @media (max-width: $mobile) {
+            font-size: rem(16);
+         }
+      }
+   }
+   // .top__buttons
+   &__buttons {
+      display: flex;
+      gap: rem(36);
+      @media (max-width: $mobile) {
+         gap: rem(14);
+      }
+      @media (max-width: $mobileSmall) {
+         flex-direction: column;
+      }
+   }
+   // .top__button
+   &__button {
+      max-width: rem(196);
+      width: 100%;
+      @media (max-width: $mobileSmall) {
+         max-width: 100%;
+      }
+   }
+   // .top__image-wrap
+   &__image-wrap {
+      @media (max-width: em(1450)) {
+         left: -30px;
+      }
+      .svg {
+         position: absolute;
+         width: 0;
+         height: 0;
+      }
+      @media (max-width: $mobile) {
+         display: flex;
+         justify-content: center;
+         left: 0;
+         margin: 0 auto rem(52);
+         @include adaptiveValue("width", 444, 135, 1450, 320, 1);
+      }
+      position: relative;
+   }
+   &__image-text {
+      max-width: percent(228, 444);
+   }
+   &__image-gerb {
+      display: flex;
+      justify-content: center;
+      backdrop-filter: blur(16px);
+      @include adaptiveValue("height", 528, 161, 1450, 320, 1);
+      @include adaptiveValue("width", 444, 135, 1450, 320, 1);
+      z-index: 2;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.14);
+      position: relative;
+      background-size: cover;
+      -webkit-clip-path: url(#my-clip-path);
+      clip-path: url(#my-clip-path);
+      width: rem(444);
+      align-items: center;
+
+      &.reset {
+         transform: rotate(0) !important;
+         transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      }
+   }
+   // .top__image-decor
+   &__image-decor {
+      animation: loading 65s linear infinite;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: percent(703, 444);
+   }
+}
+@keyframes loading {
+   0% {
+      transform: translate(-50%, -50%) rotate(0);
+   }
+   100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+   }
+}
+.page__top {
+}

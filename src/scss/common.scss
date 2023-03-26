@@ -1,0 +1,8 @@
+// Заголовки, общие БЄМ блоки и проче...
+.title {
+   font-weight: 700;
+   @include adaptiveValue("font-size", 48, 24);
+   line-height: math.div(59, 48);
+   text-align: center;
+   color: #1b0d22;
+}

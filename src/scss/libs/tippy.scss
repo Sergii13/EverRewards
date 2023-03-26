@@ -1,0 +1,114 @@
+.tippy-box[data-animation="fade"][data-state="hidden"] {
+   opacity: 0;
+}
+[data-tippy-root] {
+   max-width: calc(100vw - 10px);
+}
+.tippy-box {
+   position: relative;
+   color: #fff;
+   font-size: 16px;
+
+   transform: translate(20px, 65px);
+   line-height: 1.4;
+   outline: 0;
+   transition-property: transform, visibility, opacity;
+   min-width: 454px !important;
+   width: 100%;
+}
+@media (max-width: 1050px) {
+   .tippy-box {
+      min-width: 170px !important;
+      transform: none;
+      width: 100%;
+   }
+}
+.tippy-box[data-placement^="top"] > .tippy-arrow {
+   bottom: 0;
+}
+.tippy-box[data-placement^="top"] > .tippy-arrow:before {
+   bottom: -7px;
+   left: 0;
+   border-width: 8px 8px 0;
+   border-top-color: initial;
+   transform-origin: center top;
+}
+.tippy-box[data-placement^="bottom"] > .tippy-arrow {
+   top: 0;
+}
+.tippy-box[data-placement^="bottom"] > .tippy-arrow:before {
+   top: -7px;
+   left: 0;
+   border-width: 0 8px 8px;
+   border-bottom-color: initial;
+   transform-origin: center bottom;
+}
+.tippy-box[data-placement^="left"] > .tippy-arrow {
+   right: 0;
+}
+
+.tippy-box[data-placement^="right"] > .tippy-arrow {
+   left: 0;
+}
+.tippy-box[data-placement^="right"] > .tippy-arrow:before {
+   left: -7px;
+   border-width: 8px 8px 8px 0;
+   border-right-color: initial;
+   transform-origin: center right;
+}
+.tippy-box[data-inertia][data-state="visible"] {
+   transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+.tippy-arrow {
+   width: 16px;
+   height: 16px;
+   color: #333;
+}
+
+.tippy__number {
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 165.84%;
+   color: #c7a15b;
+}
+.tippy__text {
+   font-size: 14px;
+   line-height: 165.84%;
+   position: relative;
+
+   &::after {
+      content: "";
+      background: rgba(255, 255, 255, 0.14);
+      height: 100%;
+      width: 1px;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      height: 85%;
+      left: -12px;
+   }
+}
+.tippy-content {
+   background: #1d1d1d;
+   position: relative;
+   gap: 21px;
+   border-radius: 15px;
+   z-index: 1;
+   display: flex;
+   padding: 20px 30px 20px 16px;
+}
+@media (max-width: 991px) {
+   .tippy__text {
+      font-size: 10px;
+   }
+   .tippy-content {
+      gap: 10px;
+      padding: 10px;
+   }
+   .tippy__number {
+      font-size: 12px;
+   }
+   .tippy__text::after {
+      left: -5px;
+   }
+}

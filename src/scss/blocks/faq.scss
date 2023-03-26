@@ -1,0 +1,119 @@
+.faq {
+   @include adaptiveValue("padding-top", 78, 42);
+   background: #1e1e1e;
+   @include adaptiveValue("padding-bottom", 91, 58);
+   position: relative;
+   overflow: hidden;
+   &::after {
+      content: "";
+      height: rem(700);
+      width: rem(1380);
+      pointer-events: none;
+      position: absolute;
+      background: rgba(199, 161, 91, 0.13);
+      filter: blur(158px);
+      transform: matrix(0.82, -0.59, 0.56, 0.82, 0, 0);
+      bottom: 0;
+      left: 0;
+   }
+   // .faq__container
+   &__container {
+      position: relative;
+      z-index: 2;
+   }
+   // .faq__title
+   &__title {
+      color: #ffffff;
+      &:not(:last-child) {
+         margin-bottom: rem(20);
+      }
+   }
+   // .faq__spollers
+   &__spollers {
+   }
+}
+
+.faq-spollers {
+   // .faq-spollers__item
+   &__item {
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+   }
+   &__title-decor {
+      background: #1b0d22;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      position: relative;
+      flex-shrink: 0;
+      height: rem(21);
+      width: rem(21);
+      &::after {
+         content: "";
+         width: rem(9);
+         background-color: #fff;
+         height: 1px;
+         transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform-origin: center;
+         transform: translate(-50%, -50%) rotate(90deg);
+      }
+      &::before {
+         content: "";
+         width: rem(9);
+         background-color: #fff;
+         height: 1px;
+         transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+   }
+
+   // .faq-spollers__title
+   &__title {
+      background: #c7a15b;
+      border-radius: 61px;
+      font-weight: 700;
+      display: flex;
+      width: 100%;
+      min-height: rem(61);
+      gap: rem(10);
+      align-items: center;
+      justify-content: space-between;
+      line-height: math.div(20, 16);
+      text-align: left;
+      padding: rem(5) rem(18) rem(5) rem(31);
+      color: #000000;
+      @media (max-width: $mobile) {
+         font-size: rem(14);
+         padding-left: rem(5) rem(13) rem(5) rem(21);
+      }
+      &._spoller-active {
+         .faq-spollers__title-decor {
+            &::after {
+               transform: translate(-50%, -50%) rotate(0deg);
+            }
+         }
+      }
+   }
+   // .faq-spollers__body
+   &__body {
+   }
+   // .faq-spollers__text
+   &__text {
+      font-size: rem(14);
+      color: #fff;
+      line-height: 165.84%;
+      padding: rem(14) rem(24) rem(14) rem(31);
+      @media (max-width: $mobile) {
+         padding: rem(14) rem(0) rem(10) rem(0);
+         font-size: rem(12);
+      }
+   }
+}

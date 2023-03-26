@@ -1,0 +1,22 @@
+<script src="js/app.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+   $(function () {
+      carousel3dFx();
+   });
+
+   function carousel3dFx() {
+      var el = $(".top__image-gerb");
+      $('.top').on("mousemove", function (e) {
+            var ax = -($(".top").innerWidth() / 2 - e.pageX) / 35;
+            var ay = ($(".top").innerHeight() / 2 - e.pageY) / 35;
+            el.removeClass("reset").attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay +
+               "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" +
+               ax + "deg) rotateX(" + ay + "deg)");
+         })
+         .on("mouseout", function (e) {
+            el.addClass("reset");
+         });
+   }
+</script>

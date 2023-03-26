@@ -1,0 +1,89 @@
+.benefit {
+   @include adaptiveValue("padding-top", 81, 43);
+   padding-bottom: rem(147);
+   @media (max-width: $mobile) {
+      padding-bottom: rem(107);
+   }
+   background: #c7a15b;
+   // .benefit__container
+   &__container {
+   }
+   // .benefit__title
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: rem(54);
+      }
+   }
+   // .benefit__grid-layout
+   &__grid-layout {
+      gap: rem(92) rem(75);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+   }
+   // .benefit__item
+   &__item {
+   }
+}
+
+.item-benefit {
+   flex-shrink: 0;
+   position: relative;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   @media (any-hover: hover) {
+      &:hover {
+         .item-benefit__content {
+            transform: scale(1.32);
+         }
+      }
+   }
+   // .item-benefit__content
+   &__content {
+      width: rem(91);
+      position: relative;
+      transition: all 0.7s cubic-bezier(0.5, 0.02, 0.13, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: rem(108);
+      background: url("@img/benefit/bg.png") center / contain no-repeat;
+   }
+   // .item-benefit__tippy
+   &__tippy {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      visibility: hidden;
+   }
+   // .item-benefit__digit
+   &__digit {
+      font-weight: 700;
+      color: $yellowColor;
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      transform: translateX(50%);
+      border-radius: 50%;
+      min-width: rem(32);
+      justify-content: center;
+      height: rem(32);
+      background: #1e1e1e;
+      top: -5px;
+      right: 0;
+   }
+   // .item-benefit__text
+   &__text {
+      line-height: 134.4%;
+      text-align: center;
+      position: absolute;
+      top: calc(100% + 20px);
+      width: rem(155);
+   }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+   .item-benefit__content {
+      background: url("@img/benefit/bg@2x.png") center / contain no-repeat;
+   }
+}
